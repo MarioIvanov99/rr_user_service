@@ -19,10 +19,10 @@ public interface UserRepository extends JpaRepository<User, Long> {
     boolean existsByEmail(String email);
 
     @Query("SELECT new com.mario.userservice.dto.UserAdminResponse(u.id, u.username, u.email) FROM User u WHERE u.id = :id")
-    Optional<UserAdminResponse> findUserById(@Param("id") Long id);
+    Optional<UserAdminResponse> findUserAdminById(@Param("id") Long id);
 
     @Query("SELECT new com.mario.userservice.dto.UserResponse(u.username, u.email) FROM User u WHERE u.id = :id")
-    Optional<UserResponse> findUserResponseById(@Param("id") Long id);
+    Optional<UserResponse> findUserById(@Param("id") Long id);
 
     @Query("SELECT new com.mario.userservice.dto.UserAdminResponse(u.id, u.username, u.email) FROM User u")
     List<UserAdminResponse> findAllUsers();
