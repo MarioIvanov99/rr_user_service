@@ -1,4 +1,4 @@
-package com.mario.userservice.security;
+package com.mario.userservice.config;
 
 public class JwtAuthenticationFilter {
 }
